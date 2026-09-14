@@ -1,0 +1,25 @@
+{
+  "name": "cypress-showcase",
+  "version": "1.0.0",
+  "description": "This repository acts as a demonstration of the various skills I learned in test automation.",
+  "homepage": "https://github.com/JaredTheQA/cypress-showcase#readme",
+  "bugs": {
+    "url": "https://github.com/JaredTheQA/cypress-showcase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaredTheQA/cypress-showcase.git"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^16.0.0",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "cypress": true
+  }
+}
