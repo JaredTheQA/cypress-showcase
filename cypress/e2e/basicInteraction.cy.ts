@@ -1,5 +1,15 @@
+import { BasicInteractionPage } from '../page-objects/basicInteractionpages';
+
 describe('Basic interaction', () => {
-	it('should be implemented', () => {
-		cy.visit(Cypress.expose('BASE_URL'))
-	})
-})
+  const basicInteractionPage = new BasicInteractionPage();
+
+  it('should click a button', () => {
+    basicInteractionPage
+      .visitHomePage()
+      .verifyBrandText()
+      .clickButtonLink()
+      .verifyButtonIsPrimary()
+      .triggerRealButtonClick()
+      .verifyButtonIsSuccess();
+  });
+});
