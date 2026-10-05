@@ -12,4 +12,15 @@ describe('Basic interaction', () => {
       .triggerRealButtonClick()
       .verifyButtonIsSuccess();
   });
+
+  it('should enter text into an input field', () => {
+    basicInteractionPage
+      .visitHomePage()
+      .verifyBrandText()
+      .clickUpdatingButtonLink()
+      .verifyUpdatingButtonDefaultValue()
+      .typeNewButtonName('Test text input')
+      .clickUpdatingButton()
+      .verifyUpdatingButtonValue('Test text input');
+  });
 });
