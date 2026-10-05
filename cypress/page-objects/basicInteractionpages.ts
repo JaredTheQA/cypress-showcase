@@ -53,4 +53,44 @@ export class BasicInteractionPage {
     cy.get('#updatingButton').should('have.text', value);
     return this;
   }
+
+  clickClearInputLink() {
+    cy.get(':nth-child(7) > :nth-child(2) > h3 > a').click();
+    return this;
+  }
+
+  verifyClearInputValue(selector: string, value: string) {
+    cy.get(selector).should('have.value', value);
+    return this;
+  }
+
+  clearInput(selector: string) {
+    cy.get(selector).clear();
+    return this;
+  }
+
+  verifyClearInputEmpty(selector: string) {
+    cy.get(selector).should('have.value', '');
+    return this;
+  }
+
+  verifyClearContentEditableValue(value: string) {
+    cy.get('#clearContentEditable').should('have.text', value);
+    return this;
+  }
+
+  clearContentEditable() {
+    cy.get('#clearContentEditable').clear();
+    return this;
+  }
+
+  verifyClearContentEditableEmpty() {
+    cy.get('#clearContentEditable').should('have.text', '');
+    return this;
+  }
+
+  verifyClearStatusMessage() {
+    cy.get('#opstatus').should('have.text', 'All fields are cleared!');
+    return this;
+  }
 }
