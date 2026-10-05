@@ -57,5 +57,22 @@ describe('Basic interaction', () => {
       .clearContentEditable()
       .verifyClearContentEditableEmpty()
       .verifyClearStatusMessage();
+    });
+
+  it('should select various options and validate', () => {
+    basicInteractionPage
+      .visitHomePage()
+      .verifyBrandText()
+      .clickSelectLink()
+      .selectLanguage('JavaScript')
+      .verifyLanguageStatus('JavaScript')
+      .selectCity('New&nbsp;York')
+      .verifyCityStatus('nyc')
+      .selectProduct('Release 2.0')
+      .verifyProductStatus('Release 2.0')
+      .selectColors(['Red', 'Green', 'Blue'])
+      .verifyColorsStatus('Red, Green, Blue')
+      .selectFruits(['Elderberry', 'Fig'])
+      .verifyFruitsStatus('Elderberry, Fig');
   });
 });
