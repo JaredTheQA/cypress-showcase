@@ -93,4 +93,59 @@ export class BasicInteractionPage {
     cy.get('#opstatus').should('have.text', 'All fields are cleared!');
     return this;
   }
+
+  clickSelectLink() {
+    cy.get(':nth-child(8) > :nth-child(1) > h3 > a').click();
+    return this;
+  }
+
+  selectLanguage(value: string) {
+    cy.get('#selectLanguage').select(value);
+    return this;
+  }
+
+  verifyLanguageStatus(value: string) {
+    cy.get('#statusLanguage').should('include.text', value);
+    return this;
+  }
+
+  selectCity(value: string) {
+    cy.get('#selectCity').select(value);
+    return this;
+  }
+
+  verifyCityStatus(value: string) {
+    cy.get('#statusCity').should('include.text', value);
+    return this;
+  }
+
+  selectProduct(value: string) {
+    cy.get('#selectProduct').select(value);
+    return this;
+  }
+
+  verifyProductStatus(value: string) {
+    cy.get('#statusProduct').should('include.text', value);
+    return this;
+  }
+
+  selectColors(values: string[]) {
+    cy.get('#selectColors').select(values);
+    return this;
+  }
+
+  verifyColorsStatus(value: string) {
+    cy.get('#statusColors').should('include.text', value);
+    return this;
+  }
+
+  selectFruits(values: string[]) {
+    cy.get('#selectFruits').select(values);
+    return this;
+  }
+
+  verifyFruitsStatus(value: string) {
+    cy.get('#statusFruits').should('include.text', value);
+    return this;
+  }
 }
